@@ -90,13 +90,14 @@ pub fn owner_prediction_init_system(
     client: Res<RepliconClient>,
     mut commands: Commands,
 ) {
-    let client_id = client.id().expect("No client id id found");
+    // fixme
+    // let client_id = client.id().expect("No client id id found");
     for (e, id) in q_owners.iter() {
-        if id.0 == client_id.get() {
-            commands.entity(e).insert(Predicted);
-        } else {
+        // if id.0 == client_id.get() {
+            // commands.entity(e).insert(Predicted);
+        // } else {
             commands.entity(e).insert(Interpolated);
-        }
+        // }
     }
 }
 
